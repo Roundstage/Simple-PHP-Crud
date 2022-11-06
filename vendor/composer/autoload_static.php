@@ -6,11 +6,28 @@ namespace Composer\Autoload;
 
 class ComposerStaticInitb865d161f350363dacef1d491e676902
 {
-    public static $fallbackDirsPsr4 = array (
-        0 => __DIR__ . '/..' . '/roundstage/php_classes/src',
+    public static $prefixLengthsPsr4 = array (
+        'R' => 
+        array (
+            'Roundstage\\' => 11,
+        ),
+    );
+
+    public static $prefixDirsPsr4 = array (
+        'Roundstage\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/Roundstage/php_classes/src',
+        ),
     );
 
     public static $prefixesPsr0 = array (
+        'S' => 
+        array (
+            'Slim' => 
+            array (
+                0 => __DIR__ . '/..' . '/slim/slim',
+            ),
+        ),
         'R' => 
         array (
             'Rain' => 
@@ -27,7 +44,8 @@ class ComposerStaticInitb865d161f350363dacef1d491e676902
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->fallbackDirsPsr4 = ComposerStaticInitb865d161f350363dacef1d491e676902::$fallbackDirsPsr4;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitb865d161f350363dacef1d491e676902::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitb865d161f350363dacef1d491e676902::$prefixDirsPsr4;
             $loader->prefixesPsr0 = ComposerStaticInitb865d161f350363dacef1d491e676902::$prefixesPsr0;
             $loader->classMap = ComposerStaticInitb865d161f350363dacef1d491e676902::$classMap;
 

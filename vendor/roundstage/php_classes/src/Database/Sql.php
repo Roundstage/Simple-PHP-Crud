@@ -4,9 +4,9 @@ namespace Roundstage\Database;
 
 class Sql {
     #Configuração do banco de dados:
-    const HOSTNAME = "127.0.0.1";
+    const HOSTNAME = "localhost";
     const USERNAME = "root";
-    const PASSWORD = "root";
+    const PASSWORD = "";
     const DBNAME = "db_crud_produtos";
 
     #Conexão ao banco de dados, privada por questões de segurança.
@@ -21,7 +21,7 @@ class Sql {
             Sql::PASSWORD
         );
     }
-    private function setParams($statement, $params = array())
+    private function setParams($statement, $params = [])
     {
         foreach($params as $key => $value){
             $this->bindParam($statement, $key, $value);
@@ -31,13 +31,13 @@ class Sql {
     {
         $statement->bindParam($key, $value);
     }
-    public function query($rawQuery, $params = array())
+    public function query($rawQuery, $params = [])
     {
         $statement = $this->connection->prepare($rawQuery);
         $this->setParams($statement, $params);
         $statement->execute();
     }
-    public function select($rawQuery, $params = array()):array
+    public function select($rawQuery, $params = []):array
     {
         $statement = $this->connection->prepare($rawQuery);
         $this->setParams($statement, $params);
