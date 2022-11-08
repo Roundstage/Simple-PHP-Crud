@@ -1,0 +1,79 @@
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+<!-- Content Header (Page header) -->
+<section class="content-header">
+  <h1>
+    Lista de Produtos
+  </h1>
+</section>
+
+<!-- Main content -->
+<section class="content">
+
+  <div class="row">
+  	<div class="col-md-12">
+  		<div class="box box-primary">
+        <div class="box-header with-border">
+          <h3 class="box-title">Editar Produto</h3>
+        </div>
+        <!-- /.box-header -->
+        <!-- form start -->
+        <form role="form" action="/app/product/{$product.id}" method="post" enctype="multipart/form-data">
+          <div class="box-body">
+            <div class="form-group">
+              <label for="description">Nome da produto</label>
+              <input type="text" class="form-control" id="description" name="description" placeholder="Digite o nome do produto" value="{$product.description}" required>
+            </div>
+            <div class="form-group">
+              <label for="sale_value">Preço</label>
+              <input type="number" class="form-control" id="sale_value" name="sale_value" step="0.01" placeholder="0.00" value="{$product.sale_value}" required>
+            </div>
+            <div class="form-group">
+              <label for="stock">Stock</label>
+              <input type="number" class="form-control" id="stock" name="stock" step="0.01" placeholder="0.00" value="{$product.stock}" required>
+            </div>
+            {loop="$product.images"}
+            <div class="form-group">
+              <label for="file{$value.id}">Imagem</label>
+              <input type="file" class="form-control" id="file{$value.id}" name="{$value.id}[]">
+              <div class="box box-widget">
+                <div class="box-body">
+                    <img height="100px" widht="100px"  id="image-preview" src="{$value.image}" alt="Photo">
+                </div>
+              </div>
+            </div>
+            {/loop}
+            <div class="form-group">
+              <label for="fileNew">Imagens Novas</label>
+              <input type="file" class="form-control" id="fileNew" name="images[]" multiple="multiple">
+            </div>
+          </div>
+          </div>
+          <!-- /.box-body -->
+          <div class="box-footer">
+            <button type="submit" class="btn btn-primary">Salvar</button>
+          </div>
+        </form>
+      </div>
+  	</div>
+  </div>
+
+</section>
+<!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+<script>
+document.querySelector('#file').addEventListener('change', function(){
+  
+  var file = new FileReader();
+
+  file.onload = function() {
+    
+    document.querySelector('#image-preview').src = file.result;
+
+  }
+
+  file.readAsDataURL(this.files[0]);
+
+});
+</script>

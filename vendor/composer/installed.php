@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '5110a9dbec201af75be5cc36cbd5771a8d276ef2',
+        'reference' => '8be7979e1cfb0df224bc232b77e7565eabd20ce6',
         'name' => 'roundstage/crud_produtos',
         'dev' => true,
     ),
@@ -25,7 +25,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '5110a9dbec201af75be5cc36cbd5771a8d276ef2',
+            'reference' => '8be7979e1cfb0df224bc232b77e7565eabd20ce6',
             'dev_requirement' => false,
         ),
         'slim/slim' => array(

@@ -38,8 +38,8 @@
                   Produtos
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="/app/product">Listar</a></li>
-                  <li><a class="dropdown-item" href="/app/product/create">Criar</a></li>
+                  <li><a class="dropdown-item" href="product">Listar</a></li>
+                  <li><a class="dropdown-item" href="product/create">Criar</a></li>
                 </ul>
               </li>
             </ul>

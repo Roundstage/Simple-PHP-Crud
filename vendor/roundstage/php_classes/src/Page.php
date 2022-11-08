@@ -25,8 +25,8 @@
             #Array de configuração do RainTpl para as views.
             $config = [
                 "base_url" => null,
-                "tpl_dir" => $_SERVER['DOCUMENT_ROOT']."/crud_product/views/",
-                "cache_dir" => $_SERVER['DOCUMENT_ROOT']."/crud_product/views-cache/",
+                "tpl_dir" => $_SERVER['DOCUMENT_ROOT']."/views/",
+                "cache_dir" => $_SERVER['DOCUMENT_ROOT']."/views-cache/",
                 "debug" => true
             ];
 
