@@ -141,7 +141,7 @@
         #Recebe as fotos do $_FILES, manda pro caminho final e chama a função pra checagem.
         {
             $image_names = [];               
-
+            
             for($i = 0; $i < count($file['name']); $i++){
                 $extension = explode('.', $file['name'][$i]);
                 $extension = end($extension);
@@ -157,17 +157,24 @@
                     case 'gif':
                         $image = imagecreatefromgif($file['tmp_name'][$i]);
                         break;
+                    default:
+                        $image = "";
+                        break;
                 } 
-                            
-
-                $word = $this->getRandomWord(10);
-                $dist = $_SERVER["DOCUMENT_ROOT"]. DIRECTORY_SEPARATOR .
-                "resources" . DIRECTORY_SEPARATOR .
-                "product-images" . DIRECTORY_SEPARATOR .
-                $word.".jpg";
-    
-                imagejpeg($image, $dist);
-                imagedestroy($image);
+                if($image != ""){
+                    $word = $this->getRandomWord(10);
+                    $dist = $_SERVER["DOCUMENT_ROOT"]. DIRECTORY_SEPARATOR .
+                    "resources" . DIRECTORY_SEPARATOR .
+                    "product-images" . DIRECTORY_SEPARATOR .
+                    $word.".jpg";                
+                    imagejpeg($image, $dist);
+                    imagedestroy($image); 
+                }else {
+                    $word = $this->getRandomWord(10);
+                    $dist = $_SERVER["DOCUMENT_ROOT"]. DIRECTORY_SEPARATOR .
+                    "resources" . DIRECTORY_SEPARATOR .
+                    "product-images" . DIRECTORY_SEPARATOR . "product.jpg"; 
+                } 
                 array_push($image_names,$word);
             }
             if(!$isUpdate){

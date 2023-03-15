@@ -22,20 +22,20 @@
           <div class="box-body">
             <div class="form-group">
               <label for="description">Nome da produto</label>
-              <input type="text" class="form-control" id="description" name="description" placeholder="Digite o nome do produto" value="<?php echo htmlspecialchars( $product["description"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
+              <input type="text" class="form-control" id="description" name="description" placeholder="Digite o nome do produto" value="<?php echo htmlspecialchars( $product["description"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" required>
             </div>
             <div class="form-group">
               <label for="sale_value">Preço</label>
-              <input type="number" class="form-control" id="sale_value" name="sale_value" step="0.01" placeholder="0.00" value="<?php echo htmlspecialchars( $product["sale_value"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
+              <input type="number" class="form-control" id="sale_value" name="sale_value" step="0.01" placeholder="0.00" value="<?php echo htmlspecialchars( $product["sale_value"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" required>
             </div>
             <div class="form-group">
               <label for="stock">Stock</label>
-              <input type="number" class="form-control" id="stock" name="stock" step="0.01" placeholder="0.00" value="<?php echo htmlspecialchars( $product["stock"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">
+              <input type="number" class="form-control" id="stock" name="stock" step="0.01" placeholder="0.00" value="<?php echo htmlspecialchars( $product["stock"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" required>
             </div>
             <?php $counter1=-1;  if( isset($product["images"]) && ( is_array($product["images"]) || $product["images"] instanceof Traversable ) && sizeof($product["images"]) ) foreach( $product["images"] as $key1 => $value1 ){ $counter1++; ?>
 
             <div class="form-group">
-              <label for="file<?php echo htmlspecialchars( $value1["id"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">Foto</label>
+              <label for="file<?php echo htmlspecialchars( $value1["id"], ENT_COMPAT, 'UTF-8', FALSE ); ?>">Imagem</label>
               <input type="file" class="form-control" id="file<?php echo htmlspecialchars( $value1["id"], ENT_COMPAT, 'UTF-8', FALSE ); ?>" name="<?php echo htmlspecialchars( $value1["id"], ENT_COMPAT, 'UTF-8', FALSE ); ?>[]">
               <div class="box box-widget">
                 <div class="box-body">
@@ -46,7 +46,7 @@
             <?php } ?>
 
             <div class="form-group">
-              <label for="fileNew">Fotos Novas</label>
+              <label for="fileNew">Imagens Novas</label>
               <input type="file" class="form-control" id="fileNew" name="images[]" multiple="multiple">
             </div>
           </div>

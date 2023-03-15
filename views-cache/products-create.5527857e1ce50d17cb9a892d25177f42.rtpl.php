@@ -27,15 +27,15 @@
           <div class="box-body">
             <div class="form-group">
               <label for="description">Nome do produto</label>
-              <input type="text" class="form-control" id="description" name="description" placeholder="Digite o nome do produto">
+              <input type="text" class="form-control" id="description" name="description" placeholder="Digite o nome do produto" required>
             </div>
             <div class="form-group">
               <label for="sale_value">Preço</label>
-              <input type="number" class="form-control" id="sale_value" name="sale_value" step="0.01" placeholder="0.00">
+              <input type="number" class="form-control" id="sale_value" name="sale_value" step="0.01" placeholder="0.00" required>
             </div>
             <div class="form-group">
               <label for="stock">Quantidade</label>
-              <input type="number" class="form-control" id="stock" name="stock" placeholder="0">
+              <input type="number" class="form-control" id="stock" name="stock" placeholder="0" required>
             </div>
             <div class="form-group">
               <label for="image">Image</label>

@@ -19,8 +19,8 @@
                 return;
             }
             $product = new Product();
-            $product->setData($_POST); 
-            $product->setPhoto($_FILES['image']); 
+            $product->setData($_POST);      
+            $product->setPhoto($_FILES['image']);  
             $product->Create();
             header("Location: /app/product");
             return;
